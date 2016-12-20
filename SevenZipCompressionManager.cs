@@ -54,8 +54,9 @@ namespace CompressionManager
 
 		private static int GetDictionarySize(long length)
 		{
+			const double BYTE_TO_MB_DIVIDER = 1024d * 1024d;
 			int result = 1;
-			double lengthInMb = length / 1024d / 1024d;
+			double lengthInMb = length / BYTE_TO_MB_DIVIDER;
 
 			if (Math.Abs(lengthInMb - 1d) > double.Epsilon)
 			{
